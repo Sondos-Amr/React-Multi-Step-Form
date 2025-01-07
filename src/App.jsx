@@ -20,6 +20,10 @@ export default function App() {
     "PhD",
   ];
 
+  function handleSubmitClick() {
+    alert("Thank you! Your submission is complete.");
+  }
+
   return (
     <div className="form-container">
       <form
@@ -59,6 +63,24 @@ export default function App() {
             </div>
             <Btn nameButton="Previous" onClick={handlePreStepClick} />
             <Btn nameButton="Next" onClick={handleNextStepClick} />
+          </>
+        )}
+
+        {/* step 3 */}
+        {step === 3 && (
+          <>
+            <TopTitle title="Previous Experiences " />
+            <div className="personalInfo">
+              <div>
+                <InputField label="Enter Your skills" type="text" checked />
+                <Btn nameButton="ADD" />
+              </div>
+              <label>Are u senior</label>
+              <input type="radio" value="Yes" />
+              <input type="radio" value="No" />
+            </div>
+            <Btn nameButton="Previous" onClick={handlePreStepClick} />
+            <Btn nameButton="Submit" onClick={handleSubmitClick} />
           </>
         )}
       </form>
