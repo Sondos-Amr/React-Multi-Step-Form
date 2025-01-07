@@ -52,7 +52,7 @@ export default function App() {
           e.preventDefault();
         }}
       >
-        <h1>Form Steps</h1>
+        <header>Form Steps</header>
 
         {/* step 1 */}
         {step === 1 && (
@@ -92,7 +92,9 @@ export default function App() {
                 }}
               />
             </div>
-            <Btn nameButton="Next" onClick={handleNextStepClick} />
+            <div className="nextBtn-1">
+              <Btn nameButton="Next" onClick={handleNextStepClick} />
+            </div>
           </>
         )}
 
