@@ -12,6 +12,9 @@ export default function App() {
     phoneNumber: "",
     isStudent: false,
     question: "",
+    degree: "",
+    status: "",
+    major: "",
   });
 
   function handleNextStepClick() {
@@ -91,14 +94,33 @@ export default function App() {
           <>
             <TopTitle title="Education Information" />
             <div className="personalInfo">
+              <div>
+                <label>Are u student !? </label>
+                <InputField
+                  type="checkBox"
+                  checked={formInpts.isStudent}
+                  onChange={handleCheckBoxChange}
+                />
+              </div>
               <label>Highest Degree</label>
-              <select>
+              <select
+                value={formInpts.degree}
+                onChange={(e) => {
+                  setFormInputs({ ...formInpts, degree: e.target.value });
+                }}
+              >
                 {highestDegree.map((degree, index) => (
                   <option key={index}>{degree}</option>
                 ))}
               </select>
-              <InputField label="Graduation Year " type="date" />
-              <InputField label=" Your Major" type="text" />
+              <InputField
+                label=" Your Major"
+                type="text"
+                value={formInpts.major}
+                onChange={(e) => {
+                  setFormInputs({ ...formInpts, major: e.target.value });
+                }}
+              />
             </div>
             <Btn nameButton="Previous" onClick={handlePreStepClick} />
             <Btn nameButton="Next" onClick={handleNextStepClick} />
@@ -109,18 +131,34 @@ export default function App() {
         {step === 3 && (
           <>
             <TopTitle title="Previous Experiences " />
+            <div>
+              <label>Do you have previous experience in programming ?!</label>
+              <InputField
+                value="Yes"
+                type="radio"
+                name="status"
+                checked={formInpts.status == "Yes"}
+                onChange={(e) => {
+                  setFormInputs({ ...formInpts, status: e.target.value });
+                }}
+              />
+              Yes
+              <InputField
+                value="No"
+                type="radio"
+                name="status"
+                checked={formInpts.status == "No"}
+                onChange={(e) => {
+                  setFormInputs({ ...formInpts, status: e.target.value });
+                }}
+              />
+              No
+            </div>
             <div className="personalInfo">
               <div>
                 <InputField label="Enter Your skills" type="text" checked />
                 <Btn nameButton="ADD" />
               </div>
-              <label>Are u student !? </label>
-              <InputField
-                type="checkBox"
-                checked={formInpts.isStudent}
-                onChange={handleCheckBoxChange}
-              />
-              {/* <input type="radio" value="No" /> */}
             </div>
             <div>
               <InputField
