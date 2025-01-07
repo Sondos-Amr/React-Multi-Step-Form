@@ -10,6 +10,8 @@ export default function App() {
     lastName: "",
     email: "",
     phoneNumber: "",
+    isStudent: false,
+    question: "",
   });
 
   function handleNextStepClick() {
@@ -30,6 +32,9 @@ export default function App() {
     alert("Thank you! Your submission is complete.");
   }
 
+  function handleCheckBoxChange(e) {
+    setFormInputs({ ...formInpts, isStudent: e.target.checked });
+  }
   return (
     <div className="form-container">
       <form
@@ -109,9 +114,23 @@ export default function App() {
                 <InputField label="Enter Your skills" type="text" checked />
                 <Btn nameButton="ADD" />
               </div>
-              <label>Are u senior</label>
-              <input type="radio" value="Yes" />
-              <input type="radio" value="No" />
+              <label>Are u student !? </label>
+              <InputField
+                type="checkBox"
+                checked={formInpts.isStudent}
+                onChange={handleCheckBoxChange}
+              />
+              {/* <input type="radio" value="No" /> */}
+            </div>
+            <div>
+              <InputField
+                label="Any Question .. ! "
+                type="textarea"
+                value={formInpts.question}
+                onChange={(e) => {
+                  setFormInputs({ ...formInpts, question: e.target.value });
+                }}
+              />
             </div>
             <Btn nameButton="Previous" onClick={handlePreStepClick} />
             <Btn nameButton="Submit" onClick={handleSubmitClick} />
