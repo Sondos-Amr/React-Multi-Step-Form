@@ -13,6 +13,12 @@ export default function App() {
   function handlePreStepClick() {
     setStep(step - 1);
   }
+  const highestDegree = [
+    "High School",
+    "Bachelor's Degree",
+    "Master's Degree",
+    "PhD",
+  ];
 
   return (
     <div className="form-container">
@@ -33,6 +39,25 @@ export default function App() {
               <InputField label="Email Address" type="email" />
               <InputField label="Phone Number" type="tel" />
             </div>
+            <Btn nameButton="Next" onClick={handleNextStepClick} />
+          </>
+        )}
+
+        {/* // step 2 */}
+        {step === 2 && (
+          <>
+            <TopTitle title="Education Information" />
+            <div className="personalInfo">
+              <label>Highest Degree</label>
+              <select>
+                {highestDegree.map((degree, index) => (
+                  <option key={index}>{degree}</option>
+                ))}
+              </select>
+              <InputField label="Graduation Year " type="date" />
+              <InputField label=" Your Major" type="text" />
+            </div>
+            <Btn nameButton="Previous" onClick={handlePreStepClick} />
             <Btn nameButton="Next" onClick={handleNextStepClick} />
           </>
         )}
