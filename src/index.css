@@ -1,7 +1,10 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 * {
   margin: unset;
   padding: unset;
   box-sizing: border-box;
+  list-style: none;
+  font-family: "Poppins", sans-serif;
 }
 body {
   display: flex;
@@ -11,31 +14,29 @@ body {
   background: -webkit-repeating-linear-gradient(bottom, #0250c5, #d43f8d);
 }
 .form-container {
-  width: 400px;
+  width: 450px;
   background: #fff;
   border-radius: 5px;
   text-align: center;
   padding: 50px 35px 10px 35px;
 }
 h1 {
-  font-size: 33px;
+  font-size: 32px;
   font-weight: 800;
   margin-bottom: 11px;
   margin: 0 0 30px 0;
+  color: #d43f8d;
 }
-/* h1 {
-  font-size: 25px;
-  margin: 0 0 30px 0;
-} */
-.personalInfo label {
+.personalInfo label,
+.InputFieldContainer label {
   display: flex;
   text-align: start;
-  font-size: 25px;
+  font-size: 21px;
   font-weight: 500;
 }
 input {
   height: 45px;
-  width: 330px;
+  width: 380px;
   margin: 25px 0;
   border: 1px solid lightgrey;
   border-radius: 5px;
@@ -44,7 +45,7 @@ input {
 }
 button {
   height: 45px;
-  width: 330px;
+  width: 380px;
   margin-top: -20px;
   border: none;
   background: #d43f8d;
@@ -63,12 +64,11 @@ button:hover {
 }
 select {
   height: 45px;
-  width: 330px;
+  width: 380px;
   padding-left: 10px;
   font-size: 18px;
   font-weight: 300;
   letter-spacing: 1px;
-
   margin: 25px 0;
   border: 1px solid lightgrey;
   border-radius: 5px;
@@ -80,7 +80,6 @@ select {
   align-items: center;
 }
 .checkbox-container input {
-  /* height: 45px; */
   width: 33px !important;
   height: 20px !important;
   margin: 5px 0 !important;
@@ -91,8 +90,6 @@ select {
 }
 .pre-next-btn button {
   width: 150px;
-}
-.radio-container {
 }
 .radio-container label {
   display: flex;
@@ -108,22 +105,31 @@ select {
 .radio-contant {
   display: flex;
   justify-content: space-evenly;
-  margin: 20px 0;
+  margin: 5px 0 25px 0;
 }
-/* .radio-container label:first-child {
-  margin: 5px 0;
-} */
-/* .InputFieldContainer {
-  display: flex;
-} */
 .skills-container {
-  /* background-color: red; */
   display: flex;
   justify-content: space-between;
+  align-items: center;
+}
+.skills-container button {
+  margin: 0 !important;
 }
 .skills-container input {
-  width: 230px;
+  width: 280px;
+  margin: 0 20px 0 0 !important;
 }
 .skills-container button {
   width: 90px;
+}
+ul li {
+  text-align: start;
+  font-size: 25px;
+  margin: 0 0 9px 0;
+}
+.personalInfo label {
+  margin: 0 0 17px 0;
+}
+.InputFieldContainer label {
+  margin: 25px 0 0 0;
 }
