@@ -5,6 +5,12 @@ import Btn from "./components/Btn";
 
 export default function App() {
   const [step, setStep] = useState(1);
+  const [formInpts, setFormInputs] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+    phoneNumber: "",
+  });
 
   function handleNextStepClick() {
     setStep(step + 1);
@@ -38,10 +44,38 @@ export default function App() {
           <>
             <TopTitle title="Personal Information" />
             <div className="personalInfo">
-              <InputField label="First Name" type="text" />
-              <InputField label="Last Name" type="text" />
-              <InputField label="Email Address" type="email" />
-              <InputField label="Phone Number" type="tel" />
+              <InputField
+                label="First Name"
+                type="text"
+                value={formInpts.firstName}
+                onChange={(e) => {
+                  setFormInputs({ ...formInpts, firstName: e.target.value });
+                }}
+              />
+              <InputField
+                label="Last Name"
+                type="text"
+                value={formInpts.lastName}
+                onChange={(e) => {
+                  setFormInputs({ ...formInpts, lastName: e.target.value });
+                }}
+              />
+              <InputField
+                label="Email Address"
+                type="email"
+                value={formInpts.email}
+                onChange={(e) => {
+                  setFormInputs({ ...formInpts, email: e.target.value });
+                }}
+              />
+              <InputField
+                label="Phone Number"
+                type="tel"
+                value={formInpts.phoneNumber}
+                onChange={(e) => {
+                  setFormInputs({ ...formInpts, phoneNumber: e.target.value });
+                }}
+              />
             </div>
             <Btn nameButton="Next" onClick={handleNextStepClick} />
           </>

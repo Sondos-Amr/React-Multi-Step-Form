@@ -1,8 +1,8 @@
-export default function InputField({ label, type, value, handleChange }) {
+export default function InputField({ label, type, value, onChange }) {
   return (
     <div className="InputFieldContainer">
       <label>{label}</label>
-      <input type={type} value={value} onChange={handleChange} />
+      <input type={type} value={value} onChange={onChange} />
     </div>
   );
 }
