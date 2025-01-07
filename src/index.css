@@ -32,7 +32,7 @@ h1 {
   font-size: 25px;
   font-weight: 500;
 }
-.personalInfo input {
+input {
   height: 45px;
   width: 330px;
   margin: 25px 0;
@@ -59,4 +59,48 @@ button {
 }
 button:hover {
   background: #000;
+}
+select {
+  height: 45px;
+  width: 330px;
+  padding-left: 10px;
+  font-size: 18px;
+  font-weight: 300;
+  letter-spacing: 1px;
+
+  margin: 25px 0;
+  border: 1px solid lightgrey;
+  border-radius: 5px;
+}
+.checkbox-container {
+  display: flex;
+  margin: 25px 0;
+  justify-content: space-between;
+  align-items: center;
+}
+.checkbox-container input {
+  /* height: 45px; */
+  width: 33px !important;
+  height: 20px !important;
+  margin: 5px 0 !important;
+}
+.pre-next-btn {
+  display: flex;
+  justify-content: space-between;
+}
+.pre-next-btn button {
+  width: 150px;
+}
+.radio-container {
+}
+.radio-container label {
+  display: flex;
+  text-align: start;
+  font-size: 25px;
+  font-weight: 500;
+}
+.radio-container input {
+  width: 33px !important;
+  height: 20px !important;
+  margin: 5px 0 !important;
 }

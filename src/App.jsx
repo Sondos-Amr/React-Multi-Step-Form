@@ -103,7 +103,7 @@ export default function App() {
           <>
             <TopTitle title="Education Information" />
             <div className="personalInfo">
-              <div>
+              <div className="checkbox-container">
                 <label>Are u student !? </label>
                 <InputField
                   type="checkBox"
@@ -131,8 +131,10 @@ export default function App() {
                 }}
               />
             </div>
-            <Btn nameButton="Previous" onClick={handlePreStepClick} />
-            <Btn nameButton="Next" onClick={handleNextStepClick} />
+            <div className="pre-next-btn">
+              <Btn nameButton="Previous" onClick={handlePreStepClick} />
+              <Btn nameButton="Next" onClick={handleNextStepClick} />
+            </div>
           </>
         )}
 
@@ -140,8 +142,8 @@ export default function App() {
         {step === 3 && (
           <>
             <TopTitle title="Previous Experiences " />
-            <div>
-              <label>Do you have previous experience in programming ?!</label>
+            <div className="radio-container">
+              <label>Do You Have Pre Experience ?!</label>
               <InputField
                 value="Yes"
                 type="radio"
@@ -191,8 +193,10 @@ export default function App() {
                 }}
               />
             </div>
-            <Btn nameButton="Previous" onClick={handlePreStepClick} />
-            <Btn nameButton="Submit" onClick={handleSubmitClick} />
+            <div className="pre-next-btn">
+              <Btn nameButton="Previous" onClick={handlePreStepClick} />
+              <Btn nameButton="Submit" onClick={handleSubmitClick} />
+            </div>
           </>
         )}
       </form>
