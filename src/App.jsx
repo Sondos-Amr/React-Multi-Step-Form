@@ -15,7 +15,10 @@ export default function App() {
     degree: "",
     status: "",
     major: "",
+    skills: "",
   });
+
+  const [skillInput, setSkillInput] = useState(["HTML"]);
 
   function handleNextStepClick() {
     setStep(step + 1);
@@ -38,6 +41,10 @@ export default function App() {
   function handleCheckBoxChange(e) {
     setFormInputs({ ...formInpts, isStudent: e.target.checked });
   }
+  function handleAddClick() {
+    setSkillInput([...skillInput, formInpts.skills]);
+  }
+
   return (
     <div className="form-container">
       <form
@@ -156,8 +163,20 @@ export default function App() {
             </div>
             <div className="personalInfo">
               <div>
-                <InputField label="Enter Your skills" type="text" checked />
-                <Btn nameButton="ADD" />
+                <InputField
+                  label="Enter Your skills"
+                  type="text"
+                  value={formInpts.skills}
+                  onChange={(e) => {
+                    setFormInputs({ ...formInpts, skills: e.target.value });
+                  }}
+                />
+                <Btn nameButton="ADD" onClick={handleAddClick} />
+                <ul>
+                  {skillInput.map((skill, index) => (
+                    <li key={index}>{skill}</li>
+                  ))}
+                </ul>
               </div>
             </div>
             <div>
