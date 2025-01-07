@@ -52,7 +52,7 @@ export default function App() {
           e.preventDefault();
         }}
       >
-        <header>Form Steps</header>
+        {/* <header>Form Steps</header> */}
 
         {/* step 1 */}
         {step === 1 && (
@@ -144,31 +144,39 @@ export default function App() {
             <TopTitle title="Previous Experiences " />
             <div className="radio-container">
               <label>Do You Have Pre Experience ?!</label>
-              <InputField
-                value="Yes"
-                type="radio"
-                name="status"
-                checked={formInpts.status == "Yes"}
-                onChange={(e) => {
-                  setFormInputs({ ...formInpts, status: e.target.value });
-                }}
-              />
-              Yes
-              <InputField
-                value="No"
-                type="radio"
-                name="status"
-                checked={formInpts.status == "No"}
-                onChange={(e) => {
-                  setFormInputs({ ...formInpts, status: e.target.value });
-                }}
-              />
-              No
+
+              <div className="radio-contant">
+                <div className="radio-contant-1">
+                  <InputField
+                    value="Yes"
+                    type="radio"
+                    name="status"
+                    checked={formInpts.status == "Yes"}
+                    onChange={(e) => {
+                      setFormInputs({ ...formInpts, status: e.target.value });
+                    }}
+                  />
+                  Yes
+                </div>
+                <div className="radio-contant-2">
+                  <InputField
+                    value="No"
+                    type="radio"
+                    name="status"
+                    checked={formInpts.status == "No"}
+                    onChange={(e) => {
+                      setFormInputs({ ...formInpts, status: e.target.value });
+                    }}
+                  />
+                  No
+                </div>
+              </div>
             </div>
             <div className="personalInfo">
-              <div>
-                <InputField
-                  label="Enter Your skills"
+              <label>Enter Your skills</label>
+
+              <div className="skills-container">
+                <input
                   type="text"
                   value={formInpts.skills}
                   onChange={(e) => {
@@ -176,12 +184,12 @@ export default function App() {
                   }}
                 />
                 <Btn nameButton="ADD" onClick={handleAddClick} />
-                <ul>
-                  {skillInput.map((skill, index) => (
-                    <li key={index}>{skill}</li>
-                  ))}
-                </ul>
               </div>
+              <ul>
+                {skillInput.map((skill, index) => (
+                  <li key={index}>{skill}</li>
+                ))}
+              </ul>
             </div>
             <div>
               <InputField

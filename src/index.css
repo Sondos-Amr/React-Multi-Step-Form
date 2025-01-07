@@ -17,15 +17,16 @@ body {
   text-align: center;
   padding: 50px 35px 10px 35px;
 }
-header {
-  font-size: 35px;
-  font-weight: 600;
-  margin-bottom: 11px;
-}
 h1 {
-  font-size: 25px;
+  font-size: 33px;
+  font-weight: 800;
+  margin-bottom: 11px;
   margin: 0 0 30px 0;
 }
+/* h1 {
+  font-size: 25px;
+  margin: 0 0 30px 0;
+} */
 .personalInfo label {
   display: flex;
   text-align: start;
@@ -103,4 +104,26 @@ select {
   width: 33px !important;
   height: 20px !important;
   margin: 5px 0 !important;
+}
+.radio-contant {
+  display: flex;
+  justify-content: space-evenly;
+  margin: 20px 0;
+}
+/* .radio-container label:first-child {
+  margin: 5px 0;
+} */
+/* .InputFieldContainer {
+  display: flex;
+} */
+.skills-container {
+  /* background-color: red; */
+  display: flex;
+  justify-content: space-between;
+}
+.skills-container input {
+  width: 230px;
+}
+.skills-container button {
+  width: 90px;
 }
