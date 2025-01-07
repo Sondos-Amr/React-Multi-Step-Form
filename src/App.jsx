@@ -1,4 +1,7 @@
 import { useState } from "react";
+import TopTitle from "./component/Toptitle";
+import InputField from "./component/InputField";
+import Btn from "./component/Btn";
 
 export default function App() {
   const [step, setStep] = useState(1);
