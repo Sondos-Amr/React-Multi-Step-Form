@@ -46,6 +46,7 @@ export default function App() {
   function handleAddClick() {
     setSkillInput([...skillInput, { id: nextID, skillName: formInpts.skills }]);
     setNextId(nextID + 1);
+    setFormInputs({ ...formInpts, skills: "" });
   }
 
   function handleDeleteClick(id) {
