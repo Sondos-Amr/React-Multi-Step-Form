@@ -18,7 +18,7 @@ export default function App() {
     skills: "",
   });
 
-  const [skillInput, setSkillInput] = useState(["HTML .. "]);
+  const [skillInput, setSkillInput] = useState([""]);
 
   function handleNextStepClick() {
     setStep(step + 1);
@@ -52,8 +52,6 @@ export default function App() {
           e.preventDefault();
         }}
       >
-        {/* <header>Form Steps</header> */}
-
         {/* step 1 */}
         {step === 1 && (
           <>
@@ -187,7 +185,7 @@ export default function App() {
               </div>
               <ul>
                 {skillInput.map((skill, index) => (
-                  <li key={index}> 👉 {skill}</li>
+                  <li key={index}> {skill}</li>
                 ))}
               </ul>
             </div>
