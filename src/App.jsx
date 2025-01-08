@@ -18,7 +18,9 @@ export default function App() {
     skills: "",
   });
 
-  const [skillInput, setSkillInput] = useState([""]);
+  const [skillInput, setSkillInput] = useState([]);
+
+  const [nextID, setNextId] = useState(1);
 
   function handleNextStepClick() {
     setStep(step + 1);
@@ -42,7 +44,12 @@ export default function App() {
     setFormInputs({ ...formInpts, isStudent: e.target.checked });
   }
   function handleAddClick() {
-    setSkillInput([...skillInput, formInpts.skills]);
+    setSkillInput([...skillInput, { id: nextID, skillName: formInpts.skills }]);
+    setNextId(nextID + 1);
+  }
+
+  function handleDeleteClick(id) {
+    setSkillInput(skillInput.filter((skill) => skill.id !== id));
   }
 
   return (
@@ -184,8 +191,16 @@ export default function App() {
                 <Btn nameButton="ADD" onClick={handleAddClick} />
               </div>
               <ul>
-                {skillInput.map((skill, index) => (
-                  <li key={index}> {skill}</li>
+                {skillInput.map((skill) => (
+                  <li key={skill.id}>
+                    {skill.skillName}
+                    <Btn
+                      nameButton="Delete"
+                      onClick={() => {
+                        handleDeleteClick(skill.id);
+                      }}
+                    />
+                  </li>
                 ))}
               </ul>
             </div>
