@@ -193,15 +193,15 @@ export default function App() {
               </div>
               <ul>
                 {skillInput.map((skill) => (
-                  <li key={skill.id}>
-                    {skill.skillName}
+                  <div className="li-container">
+                    <li key={skill.id}>{skill.skillName}</li>
                     <Btn
                       nameButton="Delete"
                       onClick={() => {
                         handleDeleteClick(skill.id);
                       }}
                     />
-                  </li>
+                  </div>
                 ))}
               </ul>
             </div>

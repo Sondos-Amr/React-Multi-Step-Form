@@ -111,7 +111,7 @@ select {
 .radio-contant {
   display: flex;
   justify-content: space-evenly;
-  margin: 5px 0 25px 0;
+  margin: 5px 0 45px 0;
 }
 .skills-container {
   display: flex;
@@ -123,9 +123,16 @@ select {
 }
 .skills-container input {
   width: 280px;
-  margin: 0 20px 0 0 !important;
 }
 .skills-container button {
+  width: 90px;
+}
+.li-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.li-container button {
   width: 90px;
 }
 ul li {
@@ -140,7 +147,3 @@ ul li {
 .InputFieldContainer label {
   margin: 25px 0 0 0;
 }
-/* h1 {
-  background: rgb(24, 26, 27);
-  color: ;
-} */
