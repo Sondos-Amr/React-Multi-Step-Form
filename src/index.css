@@ -5,6 +5,11 @@
   box-sizing: border-box;
   list-style: none;
   font-family: "Poppins", sans-serif;
+  color: var(--text-color);
+}
+:root {
+  --dark-background: #181a1b;
+  --text-color: #e8e6e3;
 }
 body {
   display: flex;
@@ -13,14 +18,14 @@ body {
   min-height: 100vh;
   background: -webkit-repeating-linear-gradient(
     bottom,
-    #1e2a47,
-    #4a6fa5,
-    #9ab5d3
+    rgb(24, 34, 57),
+    rgb(59, 89, 132),
+    rgb(42, 68, 96)
   );
 }
 .form-container {
   width: 450px;
-  background: #fff;
+  background: var(--dark-background);
   border-radius: 5px;
   text-align: center;
   padding: 50px 35px 10px 35px;
@@ -30,8 +35,6 @@ h1 {
   font-weight: 800;
   margin-bottom: 11px;
   margin: 0 0 30px 0;
-  /* color: #d43f8d; */
-  color: #9ab5d3;
 }
 .personalInfo label,
 .InputFieldContainer label {
@@ -44,7 +47,8 @@ input {
   height: 45px;
   width: 380px;
   margin: 25px 0;
-  border: 1px solid lightgrey;
+  border-color: rgb(119, 110, 98);
+  background: rgb(48, 52, 54);
   border-radius: 5px;
   font-size: 18px;
   padding-left: 15px;
@@ -54,7 +58,7 @@ button {
   width: 380px;
   margin-top: -20px;
   border: none;
-  background: #9ab5d3;
+  background: #3577f1a6;
   color: #fff;
   font-size: 18px;
   font-weight: 500;
@@ -66,7 +70,8 @@ button {
   transition: 0.3s ease;
 }
 button:hover {
-  background: #1e2a47;
+  background: #3e7bea;
+  color: var(--text-color);
 }
 select {
   height: 45px;
