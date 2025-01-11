@@ -60,6 +60,11 @@ export default function App() {
           e.preventDefault();
         }}
       >
+        <div className="steps">
+          <div className={step >= 1 ? "active" : ""}>1</div>
+          <div className={step >= 2 ? "active" : ""}>2</div>
+          <div className={step >= 3 ? "active" : ""}>3</div>
+        </div>
         {/* step 1 */}
         {step === 1 && (
           <>
