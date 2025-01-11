@@ -15,6 +15,7 @@ export default function App() {
     degree: "",
     status: "",
     major: "",
+    field: "",
     skills: "",
   });
 
@@ -122,6 +123,14 @@ export default function App() {
                   onChange={handleCheckBoxChange}
                 />
               </div>
+              <InputField
+                label=" What is your field of study ? "
+                type="text"
+                value={formInpts.field}
+                onChange={(e) => {
+                  setFormInputs({ ...formInpts, field: e.target.value });
+                }}
+              />
               <label>Highest Degree</label>
               <select
                 value={formInpts.degree}

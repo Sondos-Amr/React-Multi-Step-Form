@@ -25,10 +25,17 @@ body {
 }
 .form-container {
   width: 450px;
+  min-height: 900px;
   background: var(--dark-background);
   border-radius: 5px;
   text-align: center;
   padding: 50px 35px 10px 35px;
+}
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between !important;
+  height: 900px;
 }
 h1 {
   font-size: 27px;
@@ -83,6 +90,8 @@ select {
   margin: 25px 0;
   border: 1px solid lightgrey;
   border-radius: 5px;
+  border-color: rgb(119, 110, 98);
+  background: rgb(48, 52, 54);
 }
 .checkbox-container {
   display: flex;
